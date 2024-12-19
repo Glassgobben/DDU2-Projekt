@@ -47,17 +47,22 @@ function removeCells() {
 }
 
 function removeSiteTag() {
-    let cells = document.querySelectorAll(".cell");
     for (let i = 0; i < cells.length; i++) {
         cells[i].classList.add("remove_site");
     }
     return;
 }
 
+removeSiteTag();
+
 inputField.addEventListener("keyup", function (a) {
     if (a.key == "Enter") {
         return removeSiteTag();
     }
+})
+
+createButton.addEventListener("click", function () {
+    return removeSiteTag();
 })
 
 randomNumberButton.addEventListener("click", function () {

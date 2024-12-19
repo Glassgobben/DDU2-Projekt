@@ -1,23 +1,39 @@
 body {
     flex-direction: column;
-    align-items: center;
 }
 
+body,
 .container,
-#random_number,
-#removed_items {
+.message {
     display: flex;
-    justify-content: center;
+}
+
+body,
+.container,
+.message {
     align-items: center;
 }
 
 body,
-div {
-    display: flex;
+.container {
     gap: 10px;
 }
 
+.container,
+.message {
+    justify-content: center;
+}
+
+p {
+    margin: 0;
+}
+
+.message {
+    padding: 2px;
+}
+
 input {
+    text-align: center;
     width: 50px;
     height: 24px;
 }
@@ -35,7 +51,26 @@ button {
 }
 
 #random_number,
-#removed_items {
-    height: 28px;
+#removed_items,
+#sum_marked,
+#most_repeated {
+    height: 26px;
+}
+
+.message {
     border: 1px solid black;
+}
+
+#sum_all,
+#sum_marked {
+    width: 120px;
+}
+
+#sum_all {
+    height: 24px;
+}
+
+#most_repeated,
+#not_in_place {
+    width: 450px;
 }

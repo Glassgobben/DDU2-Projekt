@@ -4,13 +4,15 @@ body {
 
 body,
 .container,
-.message {
+.message,
+.cell {
     display: flex;
 }
 
 body,
 .container,
-.message {
+.message,
+.cell {
     align-items: center;
 }
 
@@ -20,7 +22,8 @@ body,
 }
 
 .container,
-.message {
+.message,
+.cell {
     justify-content: center;
 }
 
@@ -73,4 +76,22 @@ button {
 #most_repeated,
 #not_in_place {
     width: 450px;
+}
+
+#grid_container {
+    width: 95vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 3px;
+}
+
+.cell {
+    background-color: lightgray;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.highlight {
+    background-color: orange;
 }

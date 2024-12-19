@@ -105,3 +105,7 @@ button {
 .remove_site:hover {
     background-color: antiquewhite;
 }
+
+.clicked {
+    background-color: turquoise;
+}

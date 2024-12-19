@@ -95,3 +95,13 @@ button {
 .highlight {
     background-color: orange;
 }
+
+
+.removed {
+    background-color: coral;
+}
+
+
+.remove_site:hover {
+    background-color: antiquewhite;
+}

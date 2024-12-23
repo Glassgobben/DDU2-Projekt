@@ -79,21 +79,19 @@ function displayNotInPlace(a = mostRepeated(), b = numberList()) {
         }
     }
     let uncommon = b;
-    console.log(uncommon)
-    let indexToRemove = [];
     for (let i = 0; i < uncommon.length; i++) {
         for (let j = 0; j < uncommon.length; j++) {
             if (i != j && uncommon[i] == uncommon[j]) {
-                indexToRemove.push(j);
+                uncommon.splice(j, 1);
             }
         }
     }
-    for (let i = 0; i < indexToRemove.length; i++) {
-        uncommon.splice(indexToRemove[i], 1);
-    }
-    let message = uncommon[0].number;
-    for (let i = 1; i < uncommon.length; i++) {
-        message = `${message}, ${uncommon[i].number}`;
+    let message = "";
+    if (uncommon.length > 0) {
+        message = uncommon[0].number;
+        for (let i = 1; i < uncommon.length; i++) {
+            message = `${message}, ${uncommon[i].number}`;
+        }
     }
     notInPlaceMessage.textContent = message;
     return;
@@ -102,3 +100,11 @@ function displayNotInPlace(a = mostRepeated(), b = numberList()) {
 setTag();
 displayMostRepeated();
 displayNotInPlace();
+
+inputField.addEventListener("keyup", function (a) {
+    if (a.key == "Enter") {
+        setTag();
+        displayMostRepeated();
+        displayNotInPlace();
+    }
+})

@@ -37,7 +37,8 @@ input {
 }
 
 input,
-#most_repeated {
+#most_repeated,
+#not_in_place {
     text-align: center;
 }
 

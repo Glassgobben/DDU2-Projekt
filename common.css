@@ -31,14 +31,14 @@ p {
     margin: 0;
 }
 
-.message {
-    padding: 2px;
-}
-
 input {
-    text-align: center;
     width: 50px;
     height: 24px;
+}
+
+input,
+#most_repeated {
+    text-align: center;
 }
 
 button {
@@ -53,24 +53,15 @@ button {
     width: 200px;
 }
 
-#random_number,
-#removed_items,
-#sum_marked,
-#most_repeated {
-    height: 26px;
-}
-
 .message {
     border: 1px solid black;
+    min-height: 24px;
+    padding: 2px 1px;
 }
 
 #sum_all,
 #sum_marked {
     width: 120px;
-}
-
-#sum_all {
-    height: 24px;
 }
 
 #most_repeated,
@@ -107,4 +98,8 @@ button {
 
 .clicked {
     background-color: turquoise;
+}
+
+.most_repeated {
+    background-color: aqua;
 }

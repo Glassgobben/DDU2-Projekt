@@ -36,7 +36,7 @@ cellClickEvent();
 
 inputField.addEventListener("keyup", function () {
     sumOfCells();
-    cellClickEvent(findUserInput());
+    cellClickEvent();
     return;
 })
 

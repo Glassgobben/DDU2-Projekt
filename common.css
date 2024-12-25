@@ -84,6 +84,10 @@ button {
     border-radius: 10px;
 }
 
+.cell:hover {
+    cursor: pointer;
+}
+
 .highlight {
     background-color: orange;
 }
@@ -103,4 +107,16 @@ button {
 
 .most_repeated {
     background-color: aqua;
+}
+
+.clear_cells:hover {
+    background-color: lightskyblue;
+}
+
+.clear_clicked {
+    background-color: red;
+}
+
+.clear_clicked:hover {
+    background-color: orange;
 }

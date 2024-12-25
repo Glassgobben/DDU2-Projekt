@@ -31,68 +31,83 @@ function numberList() {
     return repeatedNumbers;
 }
 
-function mostRepeated() {
-    let list = numberList();
+function mostRepetitions(a = numberList()) {
     let mostRepetitions = 0;
-    for (let i = 0; i < list.length; i++) {
-        if (mostRepetitions < list[i].repetitions) {
-            mostRepetitions = list[i].repetitions
+    for (let i = 0; i < a.length; i++) {
+        if (mostRepetitions < a[i].repetitions) {
+            mostRepetitions = a[i].repetitions
         }
     }
-    let winner = [];
-    for (let i = 0; i < list.length; i++) {
-        if (list[i].repetitions == mostRepetitions) {
-            winner.push(list[i]);
-        }
-    }
-    return winner;
+
+    return mostRepetitions;
 }
 
-function setTag(a = mostRepeated()) {
+function mostRepeatedNumbers(a = numberList(), b = mostRepetitions()) {
+    let numbers = [];
+    for (let i = 0; i < a.length; i++) {
+        if (a[i].repetitions == b) {
+            numbers.push(a[i].number);
+        }
+    }
+
+    numbers = numbers.toSorted((a, b) => a - b);
+    return numbers;
+}
+
+function setTag(a = mostRepeatedNumbers()) {
     for (let i = 0; i < cells.length; i++) {
         for (let j = 0; j < a.length; j++) {
-            if (+cells[i].textContent == a[j].number) {
+            if (+cells[i].textContent == a[j]) {
                 cells[i].classList.add("most_repeated");
             }
         }
     }
+
     return;
 }
 
-function displayMostRepeated() {
-    let displayTop = mostRepeated();
-    let message = displayTop[0].number;
-    for (let i = 1; i < displayTop.length; i++) {
-        message = `${message}, ${displayTop[i].number}`;
+function displayMostRepeated(a = mostRepeatedNumbers(), b = mostRepetitions()) {
+    let message = a[0];
+    for (let i = 1; i < a.length; i++) {
+        message = `${message}, ${a[i]}`;
     }
+
     let space = " ";
-    message = `${message}` + space + `(Repeated ${displayTop[0].repetitions} times)`
+    message = `${message}` + space + `(Repeated ${b} times)`
     repeatedMessage.textContent = message;
 }
 
-function displayNotInPlace(a = mostRepeated(), b = numberList()) {
+function displayNotInPlace(a = mostRepeatedNumbers(), b = numberList()) {
     for (let i = 0; i < a.length; i++) {
         for (let j = 0; j < b.length; j++) {
-            if (a[i].number == b[j].number) {
+            if (a[i] == b[j].number) {
                 b.splice(j, 1);
             }
         }
     }
-    let uncommon = b;
-    for (let i = 0; i < uncommon.length; i++) {
-        for (let j = 0; j < uncommon.length; j++) {
-            if (i != j && uncommon[i] == uncommon[j]) {
-                uncommon.splice(j, 1);
+
+    for (let i = 0; i < b.length; i++) {
+        for (let j = 0; j < b.length; j++) {
+            if (i != j && b[i] == b[j]) {
+                b.splice(j, 1);
             }
         }
     }
+
+    let uncommon = [];
+    for (let i = 0; i < b.length; i++) {
+        uncommon.push(b[i].number);
+    }
+    uncommon = uncommon.toSorted((a, b) => a - b);
+
     let message = "";
     if (uncommon.length > 0) {
-        message = uncommon[0].number;
+        message = uncommon[0];
         for (let i = 1; i < uncommon.length; i++) {
-            message = `${message}, ${uncommon[i].number}`;
+            message = `${message}, ${uncommon[i]}`;
         }
     }
+
     notInPlaceMessage.textContent = message;
     return;
 }
@@ -107,4 +122,14 @@ inputField.addEventListener("keyup", function (a) {
         displayMostRepeated();
         displayNotInPlace();
     }
+
+    return;
+})
+
+createButton.addEventListener("click", function () {
+    setTag();
+    displayMostRepeated();
+    displayNotInPlace();
+
+    return;
 })

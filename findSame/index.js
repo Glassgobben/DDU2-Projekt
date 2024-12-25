@@ -8,6 +8,14 @@ function clickCell() {
             } else {
                 cells[i].style.backgroundColor = "";
             }
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[i].textContent == cells[j].textContent) {
+                    cells[j].style.backgroundColor = cells[i].style.backgroundColor;
+                }
+                if (cells[j].textContent != cells[i].textContent && cells[j].style.backgroundColor == "turquoise") {
+                    cells[j].style.backgroundColor = "";
+                }
+            }
         })
     }
 

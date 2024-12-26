@@ -101,7 +101,8 @@ button {
     background-color: antiquewhite;
 }
 
-.clicked {
+.clicked,
+.sum_item {
     background-color: turquoise;
 }
 

@@ -1,0 +1,20 @@
+#random_number {
+    width: 40px;
+}
+
+#removed_items {
+    width: 200px;
+}
+
+.highlight {
+    background-color: orange;
+}
+
+.removed {
+    background-color: coral;
+}
+
+
+.remove_site:hover {
+    background-color: antiquewhite;
+}

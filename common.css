@@ -7,12 +7,6 @@ body,
 .message,
 .cell {
     display: flex;
-}
-
-body,
-.container,
-.message,
-.cell {
     align-items: center;
 }
 
@@ -46,23 +40,10 @@ button {
     height: 30px;
 }
 
-#random_number {
-    width: 40px;
-}
-
-#removed_items {
-    width: 200px;
-}
-
 .message {
     border: 1px solid black;
     min-height: 24px;
     padding: 2px 1px;
-}
-
-#sum_all,
-#sum_marked {
-    width: 120px;
 }
 
 #most_repeated,
@@ -71,7 +52,7 @@ button {
 }
 
 #grid_container {
-    width: 95vw;
+    width: 98vw;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
     gap: 3px;
@@ -86,24 +67,6 @@ button {
 
 .cell:hover {
     cursor: pointer;
-}
-
-.highlight {
-    background-color: orange;
-}
-
-.removed {
-    background-color: coral;
-}
-
-
-.remove_site:hover {
-    background-color: antiquewhite;
-}
-
-.clicked,
-.sum_item {
-    background-color: turquoise;
 }
 
 .most_repeated {

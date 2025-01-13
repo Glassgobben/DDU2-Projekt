@@ -8,7 +8,7 @@ function addCells(sum = inputAdd.value) {
     for (let i = 0; i < cells.length; i++) {
         let status = false;
         for (let j = 0; j < cells.length; j++) {
-            if (+cells[i].textContent + +cells[j].textContent == sum) {
+            if (i != j && +cells[i].textContent + +cells[j].textContent == sum) {
                 cells[i].classList.add("sum_item");
                 cells[j].classList.add("sum_item");
                 status = true;

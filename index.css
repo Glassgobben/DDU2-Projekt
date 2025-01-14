@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    gap: 5px;
+}
+
+#links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}

@@ -6,8 +6,8 @@ function clickCell() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].addEventListener("click", function () {
             let counter = 0;
-            if (cells[i].style.backgroundColor != "turquoise") {
-                cells[i].style.backgroundColor = "turquoise";
+            if (cells[i].style.backgroundColor != "greenyellow") {
+                cells[i].style.backgroundColor = "greenyellow";
             } else {
                 cells[i].style.backgroundColor = "";
                 copies.textContent = "Click on a number to find copies";
@@ -17,11 +17,11 @@ function clickCell() {
                     cells[j].style.backgroundColor = cells[i].style.backgroundColor;
                     counter++;
                 }
-                if (cells[j].textContent != cells[i].textContent && cells[j].style.backgroundColor == "turquoise") {
+                if (cells[j].textContent != cells[i].textContent && cells[j].style.backgroundColor == "greenyellow") {
                     cells[j].style.backgroundColor = "";
                 }
             }
-            if (cells[i].style.backgroundColor == "turquoise") {
+            if (cells[i].style.backgroundColor == "greenyellow") {
                 copies.textContent = `${counter} copies of the number ${cells[i].textContent}`;
             }
         })
@@ -34,12 +34,16 @@ function resetButtonEvent() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].style.backgroundColor = "";
     }
-    copies.textContent = "Click on a number to find copies";
+    resetMessage();
 
     return;
 }
 
-clickCell()
+function resetMessage() {
+    return copies.textContent = "Click on a number to find copies";
+}
+
+clickCell();
 
 inputField.addEventListener("keyup", function (a) {
     if (a.key == "Enter") {
@@ -53,6 +57,7 @@ inputField.addEventListener("keyup", function (a) {
 createButton.addEventListener("click", function () {
     createCells();
     clickCell();
+    resetMessage();
     return;
 })
 

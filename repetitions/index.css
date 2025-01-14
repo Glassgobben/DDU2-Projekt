@@ -1,0 +1,9 @@
+#most_repeated,
+#not_in_place {
+    width: 450px;
+    text-align: center;
+}
+
+.most_repeated {
+    background-color: aqua;
+}

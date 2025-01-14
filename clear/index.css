@@ -1,0 +1,11 @@
+.clear_cells:hover {
+    background-color: lightskyblue;
+}
+
+.clear_clicked {
+    background-color: red;
+}
+
+.clear_clicked:hover {
+    background-color: orange;
+}

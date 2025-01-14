@@ -30,9 +30,7 @@ input {
     height: 24px;
 }
 
-input,
-#most_repeated,
-#not_in_place {
+input {
     text-align: center;
 }
 
@@ -44,11 +42,6 @@ button {
     border: 1px solid black;
     min-height: 24px;
     padding: 2px 1px;
-}
-
-#most_repeated,
-#not_in_place {
-    width: 450px;
 }
 
 #grid_container {
@@ -67,20 +60,4 @@ button {
 
 .cell:hover {
     cursor: pointer;
-}
-
-.most_repeated {
-    background-color: aqua;
-}
-
-.clear_cells:hover {
-    background-color: lightskyblue;
-}
-
-.clear_clicked {
-    background-color: red;
-}
-
-.clear_clicked:hover {
-    background-color: orange;
 }
